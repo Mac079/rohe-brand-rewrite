@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Róhe Brand Page Rewrite by The Silk Pen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white:   #ffffff;
+      --off:     #f8f8f6;
+      --cream:   #f2f0ec;
+      --linen:   #ece9e3;
+      --stone:   #d4d0c8;
+      --mid:     #a0a098;
+      --bark:    #68645c;
+      --ink:     #181814;
+      --border:  #e0ddd8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { overflow-x: hidden; }
+
+    a, button, input, p, h1, h2, h3, h4, span, div { min-width: 0; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: var(--ink);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      padding: 9px;
+      text-transform: uppercase;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 54px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.45;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-logo {
+      font-family: 'Cormorant', serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-right a {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.4;
+    }
+
+    /* PAGE INTRO - full bleed dark opening */
+    .page-intro {
+      background: var(--ink);
+      padding: 96px 80px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0;
+      min-height: 70vh;
+      align-items: center;
+    }
+
+    .intro-divider {
+      background: rgba(255,255,255,0.08);
+      margin: 0 72px;
+    }
+
+    .intro-left {}
+
+    .intro-overline {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 28px;
+    }
+
+    .intro-headline {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(44px, 5.5vw, 72px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      margin-bottom: 32px;
+    }
+
+    .intro-headline em {
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .intro-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.5);
+      max-width: 460px;
+    }
+
+    .intro-right {}
+
+    .intro-right-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 32px;
+    }
+
+    .intro-quote {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+    }
+
+    .intro-attribution {
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* FOUNDERS SECTION */
+    .founders {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .founders-visual {
+      background: var(--linen);
+      position: relative;
+      min-height: 580px;
+      overflow: hidden;
+    }
+
+    .founders-visual-inner {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #d8d4cc 0%, #c4c0b8 100%);
+    }
+
+    .founders-visual-caption {
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(24,24,20,0.4);
+      letter-spacing: 0.06em;
+    }
+
+    .founders-content {
+      padding: 80px 72px;
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .founders-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .founders-headline {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .founders-headline em { font-style: italic; }
+
+    .founders-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--bark);
+      margin-bottom: 20px;
+    }
+
+    .founders-body strong {
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    /* PHILOSOPHY - three columns */
+    .philosophy {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phil-item {
+      padding: 56px 44px;
+      border-right: 1px solid var(--border);
+    }
+
+    .phil-item:last-child { border-right: none; }
+
+    .phil-num {
+      font-family: 'Cormorant', serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      color: var(--stone);
+      margin-bottom: 18px;
+    }
+
+    .phil-title {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .phil-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--bark);
+    }
+
+    /* MARIEKE QUOTE - full bleed */
+    .marieke-quote {
+      background: var(--cream);
+      padding: 88px 80px;
+      display: grid;
+      grid-template-columns: 1fr 2px 1.8fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .marieke-left {}
+
+    .marieke-left-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+
+    .marieke-name {
+      font-family: 'Cormorant', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .marieke-title {
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .marieke-divider {
+      background: var(--border);
+      margin: 0 72px;
+      align-self: stretch;
+    }
+
+    .marieke-right {}
+
+    .marieke-quote-text {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    /* CRAFT SECTION */
+    .craft {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .craft-content {
+      padding: 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .craft-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .craft-headline {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .craft-headline em { font-style: italic; }
+
+    .craft-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--bark);
+      margin-bottom: 20px;
+    }
+
+    .craft-body strong {
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .craft-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .craft-detail {
+      display: flex;
+      gap: 24px;
+      align-items: baseline;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .craft-detail-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      min-width: 96px;
+    }
+
+    .craft-detail-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--bark);
+    }
+
+    .craft-visual {
+      background: var(--linen);
+      position: relative;
+    }
+
+    .craft-visual-inner {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #e0dcd4 0%, #ccc8c0 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 36px;
+    }
+
+    .craft-visual-caption {
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(24,24,20,0.4);
+    }
+
+    /* WORLD SECTION */
+    .world-section {
+      background: var(--ink);
+      padding: 88px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0;
+    }
+
+    .world-divider {
+      background: rgba(255,255,255,0.08);
+      margin: 0 64px;
+    }
+
+    .world-item {}
+
+    .world-item-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 24px;
+    }
+
+    .world-item-headline {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(24px, 2.5vw, 34px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .world-item-headline em {
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .world-item-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* MAICKEL SECTION */
+    .maickel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .maickel-visual {
+      background: var(--off);
+      position: relative;
+      min-height: 520px;
+    }
+
+    .maickel-visual-inner {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #e8e4dc, #d4d0c8);
+      display: flex;
+      align-items: flex-end;
+      padding: 36px;
+    }
+
+    .maickel-visual-caption {
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(24,24,20,0.4);
+    }
+
+    .maickel-content {
+      padding: 80px 72px;
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .maickel-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .maickel-headline {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(24px, 2.6vw, 36px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .maickel-headline em { font-style: italic; }
+
+    .maickel-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--bark);
+      margin-bottom: 20px;
+    }
+
+    .maickel-body strong {
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--cream);
+      padding: 88px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .newsletter-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+
+    .newsletter-headline {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+
+    .newsletter-headline em {
+      font-style: italic;
+      color: var(--bark);
+    }
+
+    .newsletter-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--bark);
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .newsletter-form input {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 15px 18px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder { color: var(--stone); }
+    .newsletter-form input:focus { border-color: var(--ink); }
+
+    .newsletter-form button {
+      background: var(--ink);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form button:hover { background: #333; }
+
+    .newsletter-note {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--stone);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+    }
+
+    /* COPY NOTES */
+    .copy-notes {
+      padding: 80px;
+      border-top: 2px solid var(--ink);
+      background: var(--off);
+    }
+
+    .notes-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 52px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .notes-badge {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .notes-title {
+      font-family: 'Cormorant', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .notes-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--mid);
+      margin-left: auto;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 64px;
+    }
+
+    .note-item h4 {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .note-item p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--bark);
+    }
+
+    /* BEFORE AFTER */
+    .before-after {
+      padding: 0 80px 80px;
+      background: var(--off);
+    }
+
+    .ba-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 20px;
+      padding-top: 4px;
+    }
+
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .ba-card {
+      padding: 28px 32px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .ba-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      margin-bottom: 16px;
+    }
+
+    .ba-tag.before { background: var(--linen); color: var(--mid); }
+    .ba-tag.after { background: var(--ink); color: var(--white); }
+
+    .ba-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .ba-note {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+    }
+
+    /* FOOTER */
+    .footer-bar {
+      background: var(--ink);
+      padding: 22px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .footer-note {
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    .footer-email {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-website {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 1px;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .footer-website:hover { color: rgba(255,255,255,0.65); }
+
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-logo { position: static; transform: none; }
+      .page-intro { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .intro-divider { display: none; }
+      .intro-body { max-width: 100%; }
+      .founders { grid-template-columns: 1fr; }
+      .founders-visual { min-height: 55vw; }
+      .founders-content { padding: 48px 24px; border-left: none; border-top: 1px solid var(--border); }
+      .philosophy { grid-template-columns: 1fr; }
+      .phil-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .marieke-quote { grid-template-columns: 1fr; padding: 56px 24px; gap: 32px; }
+      .marieke-divider { display: none; }
+      .craft { grid-template-columns: 1fr; }
+      .craft-content { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .craft-visual { min-height: 55vw; }
+      .world-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .world-divider { display: none; }
+      .maickel { grid-template-columns: 1fr; }
+      .maickel-visual { min-height: 55vw; }
+      .maickel-content { padding: 48px 24px; border-left: none; border-top: 1px solid var(--border); }
+      .newsletter { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
+      .copy-notes { padding: 48px 24px; }
+      .notes-grid { grid-template-columns: 1fr; gap: 32px; }
+      .before-after { padding: 0 24px 48px; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .footer-bar { padding: 20px 24px; flex-direction: column; gap: 10px; text-align: center; }
+      .footer-contact { align-items: center; }
+    }
+
+    @media (max-width: 640px) {
+      .top-bar {
+        padding: 8px 18px;
+        font-size: 9px;
+        line-height: 1.5;
+        letter-spacing: 0.16em;
+      }
+
+      nav {
+        min-height: 58px;
+        height: auto;
+        padding: 16px 22px;
+        gap: 18px;
+      }
+
+      .nav-logo {
+        font-size: 19px;
+        letter-spacing: 0.22em;
+      }
+
+      .nav-right {
+        gap: 18px;
+        margin-left: auto;
+      }
+
+      .nav-right a {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+      }
+
+      .page-intro {
+        min-height: auto;
+        padding: 54px 22px 58px;
+        gap: 34px;
+      }
+
+      .intro-overline,
+      .intro-right-label,
+      .founders-label,
+      .craft-label,
+      .world-item-label,
+      .maickel-label,
+      .newsletter-label,
+      .notes-badge,
+      .ba-label {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+      }
+
+      .intro-headline {
+        font-size: 48px;
+        line-height: 1.02;
+        margin-bottom: 24px;
+      }
+
+      .intro-body {
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
+      .intro-quote {
+        font-size: 25px;
+        line-height: 1.38;
+        margin-bottom: 18px;
+      }
+
+      .intro-attribution,
+      .marieke-title {
+        font-size: 10px;
+        line-height: 1.6;
+        letter-spacing: 0.1em;
+      }
+
+      .founders-visual,
+      .craft-visual,
+      .maickel-visual {
+        min-height: 300px;
+      }
+
+      .founders-visual-caption,
+      .craft-visual-caption,
+      .maickel-visual-caption {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+        font-size: 12px;
+      }
+
+      .craft-visual-inner,
+      .maickel-visual-inner {
+        padding: 22px;
+      }
+
+      .founders-content,
+      .craft-content,
+      .maickel-content {
+        padding: 42px 22px 46px;
+      }
+
+      .founders-headline,
+      .craft-headline,
+      .maickel-headline,
+      .newsletter-headline {
+        font-size: 31px;
+        line-height: 1.13;
+        margin-bottom: 22px;
+      }
+
+      .founders-body,
+      .craft-body,
+      .maickel-body {
+        font-size: 17px;
+        line-height: 1.78;
+        margin-bottom: 18px;
+      }
+
+      .phil-item {
+        padding: 34px 22px;
+      }
+
+      .phil-num {
+        margin-bottom: 12px;
+      }
+
+      .phil-title {
+        font-size: 21px;
+      }
+
+      .phil-body {
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      .marieke-quote {
+        padding: 48px 22px;
+        gap: 26px;
+      }
+
+      .marieke-left-label {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        margin-bottom: 14px;
+      }
+
+      .marieke-name {
+        font-size: 20px;
+      }
+
+      .marieke-quote-text {
+        font-size: 28px;
+        line-height: 1.36;
+      }
+
+      .craft-detail {
+        display: block;
+        padding: 16px 0 18px;
+      }
+
+      .craft-detail-label {
+        display: block;
+        min-width: 0;
+        margin-bottom: 7px;
+      }
+
+      .craft-detail-text {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .world-section {
+        padding: 48px 22px;
+        gap: 36px;
+      }
+
+      .world-item-headline {
+        font-size: 29px;
+        line-height: 1.14;
+      }
+
+      .world-item-body,
+      .newsletter-body {
+        font-size: 16.5px;
+        line-height: 1.74;
+      }
+
+      .newsletter {
+        padding: 50px 22px;
+        gap: 30px;
+      }
+
+      .newsletter-form {
+        gap: 12px;
+      }
+
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      .newsletter-form input {
+        font-size: 16px;
+        padding: 14px 15px;
+      }
+
+      .newsletter-form button {
+        min-height: 48px;
+        padding: 14px 12px;
+        font-size: 9px;
+        line-height: 1.45;
+        letter-spacing: 0.16em;
+      }
+
+      .copy-notes {
+        padding: 42px 22px;
+      }
+
+      .notes-header {
+        display: block;
+        margin-bottom: 34px;
+        padding-bottom: 20px;
+      }
+
+      .notes-title {
+        font-size: 29px;
+        line-height: 1.1;
+        margin-top: 10px;
+      }
+
+      .notes-sub {
+        margin-left: 0;
+        margin-top: 4px;
+      }
+
+      .notes-grid {
+        gap: 30px;
+      }
+
+      .note-item h4 {
+        font-size: 9px;
+        line-height: 1.5;
+        letter-spacing: 0.15em;
+      }
+
+      .note-item p {
+        font-size: 16px;
+        line-height: 1.78;
+      }
+
+      .before-after {
+        padding: 0 22px 48px;
+      }
+
+      .ba-grid {
+        gap: 16px;
+      }
+
+      .ba-card {
+        padding: 24px 20px;
+      }
+
+      .ba-text {
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      .ba-note {
+        font-size: 11px;
+        line-height: 1.62;
+      }
+
+      .footer-bar {
+        padding: 26px 22px;
+        gap: 9px;
+      }
+
+      .footer-note {
+        max-width: 280px;
+        font-size: 9px;
+        line-height: 1.6;
+        letter-spacing: 0.12em;
+      }
+
+      .footer-email,
+      .footer-website {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 14px 18px;
+        row-gap: 10px;
+      }
+
+      .nav-logo {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+      }
+
+      .intro-headline {
+        font-size: 42px;
+      }
+
+      .intro-quote,
+      .marieke-quote-text {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">Worldwide shipping from Amsterdam</div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Objects</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Projects</a></li>
+    </ul>
+    <div class="nav-logo">R&oacute;he</div>
+    <ul class="nav-right">
+      <li><a href="#">Brand</a></li>
+      <li><a href="#">Bag</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE INTRO -->
+  <section class="page-intro">
+    <div class="intro-left">
+      <div class="intro-overline">Amsterdam, founded 2021</div>
+      <h1 class="intro-headline">
+        Strength<br>
+        without<br>
+        <em>volume.</em>
+      </h1>
+      <p class="intro-body">
+        Róhe was built around a feeling. Not a trend, not a silhouette, not a season.
+        A feeling of calm empowerment. The kind that does not announce itself.
+        That lives in the weight of a well-made fabric, the precision of a seam,
+        the way a coat changes how you move before it changes how you look.
+      </p>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-right">
+      <div class="intro-right-label">On the brand</div>
+      <div class="intro-quote">
+        "For me it is important that clothes give me a sense of calm empowerment.
+        Strong feeling without being too loud. This is the sense I want to share
+        with other women and men."
+      </div>
+      <div class="intro-attribution">Marieke Meulendijks, Founder and Creative Director</div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders">
+    <div class="founders-visual">
+      <div class="founders-visual-inner"></div>
+      <div class="founders-visual-caption">Marieke Meulendijks and Maickel Weyers, Amsterdam Studio</div>
+    </div>
+    <div class="founders-content">
+      <div class="founders-label">The Founders</div>
+      <h2 class="founders-headline">
+        Two collectors.<br>
+        One obsession with<br>
+        <em>craft and quiet.</em>
+      </h2>
+      <p class="founders-body">
+        Marieke Meulendijks and Maickel Weyers founded Róhe in 2021 from their
+        home in Amsterdam, overlooking the Vondelpark. <strong>They are collectors by nature.</strong>
+        Art, furniture, objects, relationships with makers. Their home and their brand
+        are built on the same instinct: surround yourself with things made with care,
+        by people who understand what care means.
+      </p>
+      <p class="founders-body">
+        Marieke comes from fashion and design. Maickel from a background in construction.
+        What they share is a belief in the long-lasting over the immediate, the considered
+        over the convenient. Róhe began as an extension of that shared sensibility
+        and has not drifted from it.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <div class="philosophy">
+    <div class="phil-item">
+      <div class="phil-num">01</div>
+      <div class="phil-title">Quiet Confidence</div>
+      <p class="phil-body">An infinite dialogue between restraint and strength. Clothes that hold power without performing it. Made for the woman who already knows.</p>
+    </div>
+    <div class="phil-item">
+      <div class="phil-num">02</div>
+      <div class="phil-title">A Rewritten Garderobe</div>
+      <p class="phil-body">A personal collection that transcends seasons. Each piece built to complement what you already have, not compete with it. Investment, not accumulation.</p>
+    </div>
+    <div class="phil-item">
+      <div class="phil-num">03</div>
+      <div class="phil-title">Art and Community</div>
+      <p class="phil-body">Róhe gives local artists a platform. Through meaningful collaborations, the brand builds a world that encompasses more than just fashion. It always has.</p>
+    </div>
+  </div>
+
+  <!-- MARIEKE QUOTE -->
+  <div class="marieke-quote">
+    <div class="marieke-left">
+      <div class="marieke-left-label">In her own words</div>
+      <div class="marieke-name">Marieke Meulendijks</div>
+      <div class="marieke-title">Founder and Creative Director, Róhe</div>
+    </div>
+    <div class="marieke-divider"></div>
+    <div class="marieke-right">
+      <div class="marieke-quote-text">
+        "When you buy Róhe, you feel the love, the fit, the fabric, the stitching,
+        the finish. Everything is considered. Everything is intentional."
+      </div>
+    </div>
+  </div>
+
+  <!-- CRAFT -->
+  <section class="craft">
+    <div class="craft-content">
+      <div class="craft-label">The Craft</div>
+      <h2 class="craft-headline">
+        Exceptional Italian fabrics.<br>
+        <em>Uncompromising quality.</em><br>
+        Always.
+      </h2>
+      <p class="craft-body">
+        Every Róhe collection is defined by a rewritten definition of tailoring.
+        The team works to perfect construction and fit through research, draping,
+        innovation, and in-house patternmaking. <strong>Craftsmanship is not a finishing touch.
+        It is where every piece begins.</strong>
+      </p>
+      <p class="craft-body">
+        The belted trench coat, for example, began as a vintage trench coat that
+        was deconstructed and rebuilt. The detachable double collar that emerged from that
+        process is now one of Róhe's most recognised pieces. Every Róhe classic carries
+        that kind of history: an idea taken seriously until it became something worth keeping.
+      </p>
+      <div class="craft-details">
+        <div class="craft-detail">
+          <div class="craft-detail-label">Fabrics</div>
+          <div class="craft-detail-text">Exceptional Italian textiles, chosen for their quality, handfeel, and longevity. Sourced from family manufacturers with whom Róhe has built lasting relationships.</div>
+        </div>
+        <div class="craft-detail">
+          <div class="craft-detail-label">Construction</div>
+          <div class="craft-detail-text">In-house patternmaking, draping, and innovation. Every silhouette is perfected through research before a sample is cut.</div>
+        </div>
+        <div class="craft-detail">
+          <div class="craft-detail-label">Longevity</div>
+          <div class="craft-detail-text">Made to be kept. Elevated minimalism and clean construction that improves over time. The opposite of disposable.</div>
+        </div>
+      </div>
+    </div>
+    <div class="craft-visual">
+      <div class="craft-visual-inner">
+        <div class="craft-visual-caption">In-house patternmaking, Amsterdam Atelier</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORLD SECTION -->
+  <div class="world-section">
+    <div class="world-item">
+      <div class="world-item-label">The World of Róhe</div>
+      <h3 class="world-item-headline">
+        More than fashion.<br>
+        <em>A way of curating<br>your life.</em>
+      </h3>
+      <p class="world-item-body">
+        Marieke and Maickel are collectors. Their home in Amsterdam is full of art pieces
+        gathered over years, stone objects made with sculptor friends, furniture chosen
+        for its character and its craft. That sensibility lives in everything Róhe touches.
+        The Objects collection, the art collaborations, the cookbooks.
+        Róhe is a world, not just a wardrobe.
+      </p>
+    </div>
+    <div class="world-divider"></div>
+    <div class="world-item">
+      <div class="world-item-label">Our Community</div>
+      <h3 class="world-item-headline">
+        Meaningful collaborations.<br>
+        <em>Built to last.</em>
+      </h3>
+      <p class="world-item-body">
+        Róhe recognises the importance of long-lasting business relationships,
+        each enriched by its own specialties, craftsmanship, and talents.
+        The knitwear comes from Ley Tricot, a family Maickel and Marieke have known
+        from the beginning. The sculptural objects come from friends.
+        Every collaboration is a commitment.
+      </p>
+    </div>
+  </div>
+
+  <!-- MAICKEL SECTION -->
+  <section class="maickel">
+    <div class="maickel-visual">
+      <div class="maickel-visual-inner">
+        <div class="maickel-visual-caption">Maickel Weyers, Co-Founder</div>
+      </div>
+    </div>
+    <div class="maickel-content">
+      <div class="maickel-label">Maickel Weyers, Co-Founder</div>
+      <h2 class="maickel-headline">
+        On craft as<br>
+        <em>the foundation<br>of everything.</em>
+      </h2>
+      <p class="maickel-body">
+        "Craftsmanship is key in building collections." For Maickel, this is not an
+        aesthetic statement. It is a working method. The ribbed wool knitted cardigan
+        he calls his favourite piece is made by Ley Tricot, a family manufacturer
+        with whom Róhe has grown over years of shared commitment.
+      </p>
+      <p class="maickel-body">
+        <strong>The materials we choose have a major impact on the quality and thus the lifespan
+        of the clothing.</strong> A double-face wool jacket with a seamless finish done by hand.
+        A cardigan versatile enough for the office and the bike ride home.
+        Built not for a season but for however long it takes to become a favourite.
+      </p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div>
+      <div class="newsletter-label">Stay close to Róhe</div>
+      <h2 class="newsletter-headline">
+        New collections.<br>
+        <em>The objects behind them.</em>
+      </h2>
+      <p class="newsletter-body">
+        New arrivals, collaborations, and dispatches from Marieke and Maickel
+        on what Róhe is building next. Written for the women and men who want to know
+        more than just what to wear. For those who collect, curate, and keep.
+      </p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address">
+      <button type="submit">Stay in the World of Róhe</button>
+      <p class="newsletter-note">
+        New collections and stories. No clutter. Unsubscribe whenever you like.
+      </p>
+    </div>
+  </section>
+
+  <!-- COPY NOTES -->
+  <section class="copy-notes">
+    <div class="notes-header">
+      <div class="notes-badge">The Silk Pen</div>
+      <div class="notes-title">Copywriter's Notes</div>
+      <div class="notes-sub">What changed and why</div>
+    </div>
+    <div class="notes-grid">
+      <div class="note-item">
+        <h4>The Opening Statement</h4>
+        <p>
+          The live Brand page opens with: "The Róhe philosophy centers on an infinite dialogue
+          of quiet confidence, where craft, innovation, and an artistic community converge."
+          That sentence is a moodboard description, not a brand voice. It tells you what
+          to think before giving you anything to feel. The rewrite opens with the thing Marieke
+          actually said in the Liberty London interview: "For me it is important that clothes
+          give me a sense of calm empowerment. Strong feeling without being too loud."
+          That sentence is the entire brand. It belongs at the top of the page.
+        </p>
+      </div>
+      <div class="note-item">
+        <h4>The Founders Section</h4>
+        <p>
+          The current Brand page shows a photo of Marieke and Maickel with a caption.
+          There is no copy that tells you who they are as people, what shaped them,
+          or why Róhe is the inevitable result of their particular sensibilities.
+          The Net-a-Porter home feature on Marieke reveals something important:
+          they are obsessive collectors of art, furniture and objects. That collecting instinct
+          is what gave Róhe its Objects range, its art collaborations, its cookbooks.
+          The brand is a world, not just a wardrobe. The rewrite says so.
+        </p>
+      </div>
+      <div class="note-item">
+        <h4>The Craft Section</h4>
+        <p>
+          The live Brand page mentions "exceptional Italian fabrics and uncompromising quality"
+          but never shows the work behind those words. The Liberty interview reveals how
+          Maickel and Marieke actually build a collection: through research, draping,
+          and in-house patternmaking. The trench coat, for example, began as a vintage
+          coat that was deconstructed and rebuilt. That story is the best single demonstration
+          of what Róhe means by craftsmanship. The rewrite puts it on the brand page
+          where it can earn belief rather than simply claim it.
+        </p>
+      </div>
+      <div class="note-item">
+        <h4>The Newsletter Capture</h4>
+        <p>
+          The current Róhe site has no newsletter capture visible on the Brand page.
+          For a brand that has built an entire world of objects, art, furniture,
+          and meaningful collaborations alongside the clothing, the newsletter is the
+          single most important touchpoint for the collector-customer who wants to
+          stay close to that world. The rewrite positions it accordingly:
+          "For those who collect, curate, and keep." That is the Róhe customer
+          in one phrase. The newsletter copy should say so.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE AFTER -->
+  <div class="before-after">
+    <div class="ba-label">Before and After: The Opening</div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <span class="ba-tag before">Live copy</span>
+        <p class="ba-text">
+          "The Róhe philosophy centers on an infinite dialogue of quiet confidence,
+          where craft, innovation, and an artistic community converge."
+        </p>
+        <div class="ba-note">
+          A moodboard sentence. Accurate but abstract. Tells the reader what to think
+          before giving them anything to feel. Could describe fifty other brands.
+        </div>
+      </div>
+      <div class="ba-card">
+        <span class="ba-tag after">Rewrite</span>
+        <p class="ba-text">
+          "Róhe was built around a feeling. Not a trend, not a silhouette, not a season.
+          A feeling of calm empowerment. The kind that does not announce itself.
+          That lives in the weight of a well-made fabric, the precision of a seam,
+          the way a coat changes how you move before it changes how you look."
+        </p>
+        <div class="ba-note">
+          Opens with Marieke's actual brand conviction, translated into copy that earns belief.
+          "Calm empowerment" is her phrase. The rest earns what that phrase promises.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <div class="footer-brand">The Silk Pen</div>
+    <div class="footer-note">Copy sample prepared for Róhe</div>
+    <div class="footer-contact">
+      <a href="mailto:hello@thesilkpen.in" class="footer-email">hello@thesilkpen.in</a>
+      <a href="https://thesilkpen.in" target="_blank" class="footer-website">thesilkpen.in</a>
+    </div>
+  </div>
+
+</body>
+</html>
